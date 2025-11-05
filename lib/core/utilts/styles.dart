@@ -25,7 +25,7 @@ abstract class Styles {
     fontWeight: FontWeight.normal,
   );
   static const OnBoardTitle = TextStyle(
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: FontWeight.bold,
   );
   static const OnBoardSubTitle = TextStyle(

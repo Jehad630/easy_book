@@ -9,6 +9,7 @@ class HomeViewbody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffF4F4F4),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [Image.asset("assets/images/Group.png")],
         title: Text("EASY BOOK"),
         centerTitle: true,

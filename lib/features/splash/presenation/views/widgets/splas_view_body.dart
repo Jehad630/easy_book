@@ -21,7 +21,7 @@ class _Splas_view_bodyState extends State<Splas_view_body>
     super.initState();
 
     initSlidingAnimation();
-    NavigateToHomeView();
+    NavigateToOnBoardView();
   }
 
   @override
@@ -70,9 +70,9 @@ class _Splas_view_bodyState extends State<Splas_view_body>
   }
 
   // transition method
-  void NavigateToHomeView() {
+  void NavigateToOnBoardView() {
     Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).push(AppRouter.kOnboardView);
     });
   }
 }
