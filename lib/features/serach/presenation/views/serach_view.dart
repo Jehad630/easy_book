@@ -1,3 +1,4 @@
+import 'package:easy_book/features/serach/presenation/views/widgets/serach_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SerachView extends StatelessWidget {
@@ -5,6 +6,6 @@ class SerachView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const SerachViewBody();
   }
 }
