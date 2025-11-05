@@ -33,22 +33,25 @@ class _Splas_view_bodyState extends State<Splas_view_body>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned.fill(child: Image.asset("assets/images/Splash.png")),
-        Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Padding(
+      padding: const EdgeInsets.only(top: 24.0),
+      child: Stack(
+        children: [
+          Positioned.fill(child: Image.asset("assets/images/Splash.png")),
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
 
-            children: [
-              Image.asset("assets/images/Group (1).png", height: 80),
-              SizedBox(height: 20),
-              SlidingTextAnimation(sildingAnimtion: sildingAnimation),
-            ],
+              children: [
+                Image.asset("assets/images/Group (1).png", height: 80),
+                SizedBox(height: 20),
+                SlidingTextAnimation(sildingAnimtion: sildingAnimation),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

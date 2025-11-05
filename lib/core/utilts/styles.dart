@@ -1,3 +1,5 @@
+import 'package:easy_book/features/splash/presenation/views/splash_view.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
@@ -22,12 +24,17 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.normal,
   );
-   static const OnBoardTitle = TextStyle(
+  static const OnBoardTitle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
   static const OnBoardSubTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
+  );
+  static const SplashViewText = TextStyle(
+    color: Colors.white,
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
   );
 }

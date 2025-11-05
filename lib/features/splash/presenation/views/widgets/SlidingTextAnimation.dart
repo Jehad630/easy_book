@@ -1,3 +1,4 @@
+import 'package:easy_book/core/utilts/styles.dart';
 import 'package:flutter/material.dart';
 
 class SlidingTextAnimation extends StatelessWidget {
@@ -13,11 +14,7 @@ class SlidingTextAnimation extends StatelessWidget {
           position: sildingAnimtion,
           child: Text(
             "EASY BOOK",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Styles.SplashViewText,
           ),
         );
       },
