@@ -9,10 +9,11 @@ class BookButtons extends StatelessWidget {
     super.key,
     required this.direction,
     this.grabButton,
-    this.LearnButton,
+    this.LearnButton, required this.width, required this.height,
   });
 
   final void Function()? grabButton, LearnButton;
+  final double width,height;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,8 @@ class BookButtons extends StatelessWidget {
         // grab now button
         CustomButton(
           onPressed: grabButton,
-          width: 100,
-          height: 35,
+        /*  width: width,
+          height: height,*/
           borderRadius: 8,
           title: 'Grab Now',
           backgroundColor: const Color(0xffDE7773),
@@ -41,10 +42,10 @@ class BookButtons extends StatelessWidget {
         CustomButton(
           onPressed: LearnButton,
           borderRadius: 8,
-          width: 100,
-          height: 35,
+         /* width: width,
+          height: height,*/
           title: 'Learn More',
-          backgroundColor: const Color(0xffFFFFFF),
+          //  backgroundColor: const Color(0xffFFFFFF),
           textcolor: Colors.black,
         ),
       ],

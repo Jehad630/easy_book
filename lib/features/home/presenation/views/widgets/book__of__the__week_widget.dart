@@ -1,4 +1,6 @@
-import 'package:easy_book/core/widget/book_detalis_widget.dart';
+import 'package:easy_book/core/utilts/styles.dart';
+import 'package:easy_book/core/widget/BookButtons.dart';
+import 'package:easy_book/features/home/presenation/views/widgets/book_of_the_week_detalis_widget.dart';
 import 'package:flutter/material.dart';
 
 class Book_Of_The_Week_widget extends StatelessWidget {
@@ -7,7 +9,7 @@ class Book_Of_The_Week_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16),
+      padding: const EdgeInsets.only(right: 16),
       // the conatiner for the wiget
       child: Container(
         height: 205,
@@ -15,7 +17,7 @@ class Book_Of_The_Week_widget extends StatelessWidget {
           color: const Color(0xffFFFFFF),
           borderRadius: BorderRadius.circular(16),
         ),
-        child: book_detalis_widget(
+        child: book_of_the_week_detalis_widget(
           ImageLink: "assets/images/Mask group.png",
           title: "The psychology of money",
           subtitle:

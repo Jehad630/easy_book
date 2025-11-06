@@ -1,9 +1,9 @@
 import 'package:easy_book/core/utilts/styles.dart';
-import 'package:easy_book/core/widget/Custom_Button.dart';
+import 'package:easy_book/core/widget/BookButtons.dart';
 import 'package:flutter/material.dart';
 
-class book_detalis_widget extends StatelessWidget {
-  const book_detalis_widget({
+class book_of_the_week_detalis_widget extends StatelessWidget {
+  const book_of_the_week_detalis_widget({
     super.key,
     required this.ImageLink,
     required this.title,
@@ -57,27 +57,7 @@ class book_detalis_widget extends StatelessWidget {
                 SizedBox(height: 8),
 
                 // buttons
-                Row(
-                  children: [
-                    CustomButton(
-                      title: 'Grab Now',
-                      textcolor: Colors.white,
-                      /* height: 26,
-                      width: 78,*/
-                      borderRadius: 8,
-                      backgroundColor: const Color(0xffDE7773),
-                    ),
-                    SizedBox(height: 10),
-                    CustomButton(
-                      title: 'Learn More',
-                      textcolor: Colors.black,
-                      /*  height: 26,
-                      width: 78,*/
-                      borderRadius: 8,
-                      backgroundColor: const Color(0xffFFFFFF),
-                    ),
-                  ],
-                ),
+                BookButtons(direction: Axis.horizontal,height: 35,width: 100,),
               ],
             ),
           ),

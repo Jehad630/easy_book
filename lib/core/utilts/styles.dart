@@ -1,4 +1,4 @@
-import 'package:easy_book/features/splash/presenation/views/splash_view.dart';
+import 'package:easy_book/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -6,6 +6,7 @@ abstract class Styles {
   static const textStyle30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w900,
+    fontFamily: kHKGrotesk,
   );
   static const textStyle20 = TextStyle(
     fontSize: 20,
@@ -37,9 +38,15 @@ abstract class Styles {
     fontSize: 22,
     fontWeight: FontWeight.bold,
   );
-  static const BookTitle = TextStyle(fontSize: 14, fontWeight: FontWeight.w600);
+  static const BookTitle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: booktextcolor,
+   // fontFamily: kHKGrotesk,
+  );
   static const BookSubTitle = TextStyle(
     fontSize: 10,
+    color: booktextcolor,
     fontWeight: FontWeight.normal,
   );
 }
