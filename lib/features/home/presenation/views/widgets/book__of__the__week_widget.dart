@@ -1,5 +1,3 @@
-import 'package:easy_book/core/utilts/styles.dart';
-import 'package:easy_book/core/widget/BookButtons.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/book_of_the_week_detalis_widget.dart';
 import 'package:flutter/material.dart';
 

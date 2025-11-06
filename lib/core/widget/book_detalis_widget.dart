@@ -62,8 +62,7 @@ class book_detalis_widget extends StatelessWidget {
                     CustomButton(
                       title: 'Grab Now',
                       textcolor: Colors.white,
-                      /* height: 26,
-                      width: 78,*/
+
                       borderRadius: 8,
                       backgroundColor: const Color(0xffDE7773),
                     ),
@@ -71,8 +70,7 @@ class book_detalis_widget extends StatelessWidget {
                     CustomButton(
                       title: 'Learn More',
                       textcolor: Colors.black,
-                      /*  height: 26,
-                      width: 78,*/
+
                       borderRadius: 8,
                       backgroundColor: const Color(0xffFFFFFF),
                     ),

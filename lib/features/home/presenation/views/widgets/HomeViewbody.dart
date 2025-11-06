@@ -19,7 +19,10 @@ class HomeViewbody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // book of the week section
-              const CustomAppBar(title: "Book of the week"),
+              const CustomAppBar(
+                title: "Book of the week",
+                backgroundColor: Color(0xffF4F4F4),
+              ),
               Book_Of_The_Week_widget(),
 
               const SizedBox(height: 25),

@@ -1,6 +1,8 @@
+import 'package:easy_book/core/utilts/app_routes.dart';
 import 'package:easy_book/core/utilts/styles.dart';
 import 'package:easy_book/core/widget/BookButtons.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class book_of_the_week_detalis_widget extends StatelessWidget {
   const book_of_the_week_detalis_widget({
@@ -57,7 +59,17 @@ class book_of_the_week_detalis_widget extends StatelessWidget {
                 SizedBox(height: 8),
 
                 // buttons
-                BookButtons(direction: Axis.horizontal,height: 35,width: 100,),
+                BookButtons(
+                  direction: Axis.horizontal,
+                  height: 35,
+                  width: 100,
+                  LearnButton: () {
+                    GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                  },
+                  grabButton: () {
+                    GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                  },
+                ),
               ],
             ),
           ),

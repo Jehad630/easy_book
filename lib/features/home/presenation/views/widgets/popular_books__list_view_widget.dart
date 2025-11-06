@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_book/core/utilts/app_routes.dart';
 import 'package:easy_book/core/utilts/styles.dart';
 import 'package:easy_book/core/widget/Custom_Button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Popular_books_ListView_widget extends StatelessWidget {
   const Popular_books_ListView_widget({super.key});
@@ -50,12 +52,13 @@ class Popular_books_ListView_widget extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-
+                    //rating
                     Text(
                       "5.0 | Based on 23k Reviews",
                       style: Styles.BookSubTitle,
                     ),
                     SizedBox(height: 8),
+
                     //price
                     Text(
                       "Free",
@@ -72,25 +75,28 @@ class Popular_books_ListView_widget extends StatelessWidget {
               // buttons
               Padding(
                 padding: const EdgeInsets.only(top: 22.0, right: 12),
-                //child: BookButtons(direction: Axis.vertical,width: 80,height: 35,),
                 child: Column(
                   children: [
                     CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kbookdetalisView);
+                      },
                       title: 'Grab Now',
                       textcolor: Colors.white,
-                      /* height: 26,
-                      width: 78,*/
                       borderRadius: 8,
                       backgroundColor: const Color(0xffDE7773),
                     ),
                     SizedBox(height: 8),
                     CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kbookdetalisView);
+                      },
                       title: 'Learn More',
                       textcolor: Colors.black,
-                      /*  height: 26,
-                      width: 78,*/
                       borderRadius: 8,
                       backgroundColor: const Color(0xffFFFFFF),
                     ),
