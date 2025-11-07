@@ -27,7 +27,15 @@ class Recomanded_books_ListView extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
                         onTap: () {},
-                        child:  CustomBookWidget(ImageLink: state.books[index].volumeInfo.imageLinks.thumbnail ),
+                        child: CustomBookWidget(
+                          ImageLink:
+                              state
+                                  .books[index]
+                                  .volumeInfo
+                                  .imageLinks
+                                  ?.thumbnail ??
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0wUdZyXhG2dwDhA2pPng6QSs5jpXVV8jHIz8Z64ZQ2zLqDrgMXSUFvwZ3aOZ9KQW0_mA&usqp=CAU",
+                        ),
                       ),
                     );
                   },
@@ -38,7 +46,6 @@ class Recomanded_books_ListView extends StatelessWidget {
         } else if (state is RecomandedBooksFaliure) {
           print("RecomandedBooksFaliure");
           return CustomErrorWidget(errmesg: state.errmesg);
-          
         } else {
           print("CustomLoading");
           return const CustomLoading();
