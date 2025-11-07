@@ -7,7 +7,7 @@ final getIt = GetIt.instance;
 // 
 void SetupServiceLocater() {
   //         <HomeRepoImp> = type of
-  getIt.registerSingleton<HomeRepoImp>(HomeRepoImp(Apiservice(Dio())));
+  getIt.registerSingleton<Apiservice>(Apiservice(Dio()));
 
-  getIt.registerSingleton<HomeRepoImp>(HomeRepoImp((getIt.get<Apiservice>())));
+  getIt.registerSingleton<HomeRepoImp>(HomeRepoImp(getIt.get<Apiservice>()));
 }

@@ -20,12 +20,12 @@ class EasyBook extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              PopularBooksCubit(getIt.get<HomeRepoImp>()..fetchPopularBooks()),
+              PopularBooksCubit(getIt.get<HomeRepoImp>())..fetchPopularBooks(),
         ),
         BlocProvider(
-          create: (context) => RecomandedBooksCubit(
-            getIt.get<HomeRepoImp>()..fetchRecomandedBooks(),
-          ),
+          create: (context) =>
+              RecomandedBooksCubit(getIt.get<HomeRepoImp>())
+                ..fetchRecomandedBooks(),
         ),
       ],
 

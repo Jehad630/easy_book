@@ -19,7 +19,7 @@ class RecomandedBooksCubit extends Cubit<RecomandedBooksState> {
     // faliure ==>left side   or    books ==> right side
     result.fold(
       (failure) {
-        // will send a message to the faliure class 
+        // will send a message to the faliure class
         emit(RecomandedBooksFaliure(failure.errmesg));
       },
       (books) {
