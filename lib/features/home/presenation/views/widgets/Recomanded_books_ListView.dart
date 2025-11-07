@@ -1,9 +1,11 @@
+import 'package:easy_book/core/utilts/app_routes.dart';
 import 'package:easy_book/core/widget/Custom_Loading.dart';
 import 'package:easy_book/core/widget/Custom_error_widget.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/RecomandedBooksCubit/recomanded_books_cubit.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/custom_book_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class Recomanded_books_ListView extends StatelessWidget {
   const Recomanded_books_ListView({super.key});
@@ -26,7 +28,9 @@ class Recomanded_books_ListView extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                        },
                         child: CustomBookWidget(
                           ImageLink:
                               state
