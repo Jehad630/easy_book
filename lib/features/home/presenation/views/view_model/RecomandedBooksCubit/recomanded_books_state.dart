@@ -8,3 +8,15 @@ sealed class RecomandedBooksState extends Equatable {
 }
 
 final class RecomandedBooksInitial extends RecomandedBooksState {}
+
+final class RecomandedBooksLoading extends RecomandedBooksState {}
+
+final class RecomandedBooksSuccess extends RecomandedBooksState {
+  final List<BookModel> books;
+  const RecomandedBooksSuccess(this.books);
+}
+
+final class RecomandedBooksFaliure extends RecomandedBooksState {
+  final String errmesg;
+  const RecomandedBooksFaliure(this.errmesg);
+}
