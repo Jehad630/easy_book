@@ -24,18 +24,23 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
-            icon: Icon(Icons.arrow_back_sharp, size: 32,),
+            icon: Icon(Icons.arrow_back_sharp, size: 32),
           ),
           Text(
             title,
             textAlign: TextAlign.center,
-            style: style ?? Styles.textStyle20.copyWith(fontWeight: FontWeight.bold,color: Color(0xff292B38)),
+            style:
+                style ??
+                Styles.textStyle20.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff292B38),
+                ),
           ),
           IconButton(
             onPressed: () {
               GoRouter.of(context).push(AppRouter.kSerachView);
             },
-            icon: Icon(Icons.search_rounded, size: 32,),
+            icon: Icon(Icons.search_rounded, size: 32),
           ),
         ],
       ),

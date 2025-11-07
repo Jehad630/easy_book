@@ -10,7 +10,7 @@ abstract class AppRouter {
   static final kbookdetalisView = "/BookDetalisView";
   static final kSerachView = "/serachview";
   static final kOnboardView = "/OnboardView";
- // static final kBookDetalisView= "/BookDetalisView";
+  // static final kBookDetalisView= "/BookDetalisView";
 
   static final router = GoRouter(
     routes: [

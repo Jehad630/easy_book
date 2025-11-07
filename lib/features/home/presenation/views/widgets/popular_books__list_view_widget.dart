@@ -79,9 +79,7 @@ class Popular_books_ListView_widget extends StatelessWidget {
                   children: [
                     CustomButton(
                       onPressed: () {
-                        GoRouter.of(
-                          context,
-                        ).push(AppRouter.kbookdetalisView);
+                        GoRouter.of(context).push(AppRouter.kbookdetalisView);
                       },
                       title: 'Grab Now',
                       textcolor: Colors.white,
@@ -91,9 +89,7 @@ class Popular_books_ListView_widget extends StatelessWidget {
                     SizedBox(height: 8),
                     CustomButton(
                       onPressed: () {
-                        GoRouter.of(
-                          context,
-                        ).push(AppRouter.kbookdetalisView);
+                        GoRouter.of(context).push(AppRouter.kbookdetalisView);
                       },
                       title: 'Learn More',
                       textcolor: Colors.black,

@@ -12,10 +12,7 @@ class SlidingTextAnimation extends StatelessWidget {
       builder: (context, _) {
         return SlideTransition(
           position: sildingAnimtion,
-          child: Text(
-            "EASY BOOK",
-            style: Styles.SplashViewText,
-          ),
+          child: Text("EASY BOOK", style: Styles.SplashViewText),
         );
       },
     );

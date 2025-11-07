@@ -42,7 +42,7 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: booktextcolor,
-   // fontFamily: kHKGrotesk,
+    // fontFamily: kHKGrotesk,
   );
   static const BookSubTitle = TextStyle(
     fontSize: 10,
