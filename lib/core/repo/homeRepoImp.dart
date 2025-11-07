@@ -5,7 +5,7 @@ import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/core/repo/homeRepo.dart';
 import 'package:easy_book/core/utilts/ApiService.dart';
 
-abstract class HomeRepoImp implements HomeRepo {
+ class HomeRepoImp implements HomeRepo {
   final Apiservice apiservice;
   HomeRepoImp(this.apiservice);
 

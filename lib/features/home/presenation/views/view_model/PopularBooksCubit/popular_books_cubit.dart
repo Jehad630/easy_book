@@ -19,7 +19,7 @@ class PopularBooksCubit extends Cubit<PopularBooksState> {
     // faliure ==>left side   or    books ==> right side
     result.fold(
       (failure) {
-        // will send a message to the faliure class 
+        // will send a message to the faliure class
         emit(PopularBooksFaliure(failure.errmesg));
       },
       (books) {
