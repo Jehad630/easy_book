@@ -67,27 +67,14 @@ class Popular_books_ListView_widget extends StatelessWidget {
                         style: Styles.BookSubTitle,
                       ),
                       SizedBox(height: 8),
-
-                      Row(
-                        children: [
-                          Text(
-                            book.saleInfo?.listPrice?.amount.toString() ?? "",
-                            style: Styles.BookSubTitle.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(width: 5),
-                          Text(
-                            book.saleInfo?.listPrice?.currencyCode.toString() ??
-                                "",
-                            style: Styles.BookSubTitle.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-
                       //price
+                      PriceWidget(
+                        currencyCode:
+                            book.saleInfo?.listPrice?.currencyCode.toString() ??
+                            "",
+                        price:
+                            book.saleInfo?.listPrice?.amount.toString() ?? "",
+                      ),
                     ],
                   ),
                 ),
@@ -102,7 +89,9 @@ class Popular_books_ListView_widget extends StatelessWidget {
                   children: [
                     CustomButton(
                       onPressed: () {
-                        GoRouter.of(context).push(AppRouter.kbookdetalisView,extra: book);
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kbookdetalisView, extra: book);
                       },
                       title: 'Grab Now',
                       textcolor: Colors.white,
@@ -112,7 +101,9 @@ class Popular_books_ListView_widget extends StatelessWidget {
                     SizedBox(height: 8),
                     CustomButton(
                       onPressed: () {
-                        GoRouter.of(context).push(AppRouter.kbookdetalisView,extra: book);
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kbookdetalisView, extra: book);
                       },
                       title: 'Learn More',
                       textcolor: Colors.black,
@@ -126,6 +117,31 @@ class Popular_books_ListView_widget extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class PriceWidget extends StatelessWidget {
+  const PriceWidget({
+    super.key,
+    required this.price,
+    required this.currencyCode,
+  });
+  final String price, currencyCode;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          price,
+          style: Styles.BookSubTitle.copyWith(fontWeight: FontWeight.bold),
+        ),
+        SizedBox(width: 5),
+        Text(
+          currencyCode,
+          style: Styles.BookSubTitle.copyWith(fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }

@@ -5,7 +5,7 @@ import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/core/repo/homeRepo.dart';
 import 'package:easy_book/core/utilts/ApiService.dart';
 
- class HomeRepoImp implements HomeRepo {
+class HomeRepoImp implements HomeRepo {
   final Apiservice apiservice;
   HomeRepoImp(this.apiservice);
 
@@ -37,12 +37,16 @@ import 'package:easy_book/core/utilts/ApiService.dart';
   Future<Either<Failure, List<BookModel>>> fetchPopularBooks() async {
     try {
       var data = await apiservice.get(
-        endpoint: "/volumes?q=subject:Programming&Filetring=free-ebooks",
+        endpoint: "/volumes?q=subject:Programming",
       );
       List<BookModel> books = [];
       for (var item in data["items"]) {
         try {
-          books.add(BookModel.fromJson(item));
+          if (BookModel.fromJson(item).volumeInfo.imageLinks?.thumbnail ==
+              null) {
+            continue;
+          } else {books.add(BookModel.fromJson(item));}
+          
         } catch (e) {
           return left(serverFaliure(e.toString()));
         }
