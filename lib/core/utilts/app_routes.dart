@@ -1,3 +1,4 @@
+import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/features/home/presenation/views/book_detalis_view.dart';
 import 'package:easy_book/features/home/presenation/views/home_view.dart';
 import 'package:easy_book/features/onBoardView/presenation/view/onBoard_view.dart';
@@ -10,7 +11,6 @@ abstract class AppRouter {
   static final kbookdetalisView = "/BookDetalisView";
   static final kSerachView = "/serachview";
   static final kOnboardView = "/OnboardView";
-  // static final kBookDetalisView= "/BookDetalisView";
 
   static final router = GoRouter(
     routes: [
@@ -26,7 +26,11 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kbookdetalisView,
-        builder: (context, state) => const BookDetailsView(),
+
+        builder: (context, state) {
+          final book = state.extra as BookModel;
+          return BookDetailsView(book: book);
+        },
       ),
     ],
   );

@@ -18,6 +18,7 @@ class HomeViewbody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              
               // book of the week section
               const CustomAppBar(
                 title: "Book of the week",

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_book/core/widget/Custom_Loading.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookWidget extends StatelessWidget {
@@ -13,11 +14,7 @@ class CustomBookWidget extends StatelessWidget {
             ImageLink ??
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0wUdZyXhG2dwDhA2pPng6QSs5jpXVV8jHIz8Z64ZQ2zLqDrgMXSUFvwZ3aOZ9KQW0_mA&usqp=CAU",
         fit: BoxFit.fill,
-        placeholder: (context, url) => Icon(
-          Icons.error,
-          color: Colors.red,
-          size: 64,
-        ), //CustomLoadingIndicator(),
+        placeholder: (context, url) => CustomLoading(),
         errorWidget: (context, url, error) =>
             Icon(Icons.error, color: Colors.red, size: 64),
       ),

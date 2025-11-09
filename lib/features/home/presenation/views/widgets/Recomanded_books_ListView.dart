@@ -29,7 +29,10 @@ class Recomanded_books_ListView extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
                         onTap: () {
-                          GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                          GoRouter.of(context).push(
+                            AppRouter.kbookdetalisView,
+                            extra: state.books[index],
+                          );
                         },
                         child: CustomBookWidget(
                           ImageLink:

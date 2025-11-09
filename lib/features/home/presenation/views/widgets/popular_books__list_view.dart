@@ -22,11 +22,9 @@ class Popular_books_ListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Popular_books_ListView_widget(
-                      book: state.books[index],
-                    ),
+
+                  child: Popular_books_ListView_widget(
+                    book: state.books[index],
                   ),
                 );
               },
