@@ -2,15 +2,22 @@ import 'package:easy_book/core/utilts/styles.dart';
 import 'package:flutter/material.dart';
 
 class author_card extends StatelessWidget {
-  const author_card({super.key, required this.authorname});
+  const author_card({
+    super.key,
+    required this.hint,
+    required this.title,
+    required this.height,
+    required this.width,
+  });
 
-  final String authorname;
+  final String hint, title;
+  final double height, width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 350,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         color: Color(0xffFFFFFF),
         borderRadius: BorderRadius.circular(12),
@@ -33,7 +40,7 @@ class author_card extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Author",
+                    hint,
                     style: Styles.textStyle14.copyWith(
                       color: Colors.blueGrey,
                       fontSize: 10,
@@ -41,7 +48,7 @@ class author_card extends StatelessWidget {
                   ),
                   //Author name section
                   Text(
-                    authorname,
+                    title,
                     style: Styles.textStyle18.copyWith(
                       color: const Color(0xff171B36),
                     ),
@@ -53,7 +60,7 @@ class author_card extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.star, color: Colors.grey, size: 22),
+            //const Icon(Icons.star, color: Colors.grey, size: 22),
           ],
         ),
       ),

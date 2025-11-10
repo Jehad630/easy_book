@@ -45,19 +45,62 @@ class Book_Details_ViewBody extends StatelessWidget {
                   left: 50,
                   right: 50,
                   child: author_card(
-                    authorname:
-                        (book.volumeInfo.authors?.join(', ') ??
-                        'Unknown Author'),
+                    hint: 'Author',
+                    title:
+                        book.volumeInfo.authors?.join(', ') ?? 'Unknown Author',
+                    height: 80,
+                    width: 350,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 100,),
+            SizedBox(height: 100),
             // 🔹 About the book section
             about_the_book_section(
               description:
                   book.volumeInfo.description?.toString() ??
                   "No Avalible description",
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  author_card(
+                    hint: "Publisher",
+                    title:
+                        book.volumeInfo.publisher?.toString() ??
+                        "Unknown Publisher",
+                    height: 80,
+                    width: 150,
+                  ),
+                  SizedBox(width: 10),
+                  author_card(
+                    hint: 'Published Date',
+                    title: book.volumeInfo.publishedDate?.toString() ?? "",
+                    height: 80,
+                    width: 150,
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                author_card(
+                  hint: "Page  Count",
+                  title: book.volumeInfo.pageCount?.toString() ?? "Unknown",
+                  height: 80,
+                  width: 150,
+                ),
+                SizedBox(width: 10),
+                author_card(
+                  hint: "CateGory",
+                  title: book.volumeInfo.categories?.join(', ') ?? "Unknown" ,
+                  height: 80,
+                  width: 150,
+                ),
+              ],
             ),
           ],
         ),

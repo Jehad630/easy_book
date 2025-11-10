@@ -9,7 +9,7 @@ class BookDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF4F4F4),
-      body: Book_Details_ViewBody(book: book,),
+      body: Book_Details_ViewBody(book: book),
     );
   }
 }
