@@ -13,7 +13,8 @@ class HomeRepoImp implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchRecomandedBooks() async {
     try {
       var data = await apiservice.get(
-        endpoint: "/volumes?q=subject:computer science&Filetring=free-ebooks&maxResults=12&projection=full",
+        endpoint:
+            "/volumes?q=subject:computer science&Filetring=free-ebooks&maxResults=12&projection=full",
       );
       List<BookModel> books = [];
       for (var item in data["items"]) {
@@ -45,8 +46,9 @@ class HomeRepoImp implements HomeRepo {
           if (BookModel.fromJson(item).volumeInfo.imageLinks?.thumbnail ==
               null) {
             continue;
-          } else {books.add(BookModel.fromJson(item));}
-          
+          } else {
+            books.add(BookModel.fromJson(item));
+          }
         } catch (e) {
           return left(serverFaliure(e.toString()));
         }
@@ -73,6 +75,35 @@ class HomeRepoImp implements HomeRepo {
       if (data["items"] != null) {
         for (var item in data["items"]) {
           books.add(BookModel.fromJson(item));
+        }
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(serverFaliure.fromDioError(e));
+      } else {
+        return left(serverFaliure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBook() async {
+    try {
+      var data = await apiservice.get(
+        endpoint: "/volumes?q=subject:Programming&orderBy=newest",
+      );
+      List<BookModel> books = [];
+      for (var item in data["items"]) {
+        try {
+          if (BookModel.fromJson(item).volumeInfo.imageLinks?.thumbnail ==
+              null) {
+            continue;
+          } else {
+            books.add(BookModel.fromJson(item));
+          }
+        } catch (e) {
+          return left(serverFaliure(e.toString()));
         }
       }
       return right(books);

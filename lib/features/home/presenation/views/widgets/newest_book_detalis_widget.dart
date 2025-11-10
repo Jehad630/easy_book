@@ -1,25 +1,34 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/core/utilts/app_routes.dart';
 import 'package:easy_book/core/utilts/styles.dart';
 import 'package:easy_book/core/widget/BookButtons.dart';
+import 'package:easy_book/core/widget/Custom_Loading.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class book_of_the_week_detalis_widget extends StatelessWidget {
-  const book_of_the_week_detalis_widget({
-    super.key,
-    required this.ImageLink,
-    required this.title,
-    required this.subtitle,
-  });
+class newest_book_detalis_widget extends StatelessWidget {
+  const newest_book_detalis_widget({super.key, required this.book});
 
-  final String ImageLink, title, subtitle;
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         //   book image
-        Image.asset(ImageLink, height: double.infinity, fit: BoxFit.cover),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: AspectRatio(
+            aspectRatio: 2 / 3.3,
+            child: CachedNetworkImage(
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? "",
+              fit: BoxFit.fill,
+              placeholder: (context, url) => CustomLoading(),
+              errorWidget: (context, url, error) =>
+                  Icon(Icons.error, color: Colors.red, size: 64),
+            ),
+          ),
+        ),
 
         // book detalis
         Expanded(
@@ -30,7 +39,7 @@ class book_of_the_week_detalis_widget extends StatelessWidget {
               children: [
                 //book title
                 Text(
-                  title,
+                  book.volumeInfo.title?.toString() ?? "",
                   style: Styles.BookTitle,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -41,7 +50,8 @@ class book_of_the_week_detalis_widget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(
-                    subtitle,
+                    book.volumeInfo.description?.toString() ?? "",
+                    maxLines: 5,
                     style: Styles.BookSubTitle.copyWith(
                       shadows: [
                         Shadow(
@@ -66,10 +76,12 @@ class book_of_the_week_detalis_widget extends StatelessWidget {
                   LearnButton: () {
                     GoRouter.of(
                       context,
-                    ).push(AppRouter.kbookdetalisView, extra: ImageLink);
+                    ).push(AppRouter.kbookdetalisView, extra: book);
                   },
                   grabButton: () {
-                    GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                    GoRouter.of(
+                      context,
+                    ).push(AppRouter.kbookdetalisView, extra: book);
                   },
                 ),
               ],

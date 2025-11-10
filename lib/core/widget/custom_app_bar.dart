@@ -23,20 +23,25 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
+            //  padding: EdgeInsets.all(8),
             onPressed: () {
               GoRouter.of(context).pop();
             },
             icon: Icon(Icons.arrow_back_sharp, size: 32),
           ),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style:
-                style ??
-                Styles.textStyle20.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff292B38),
-                ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              title,
+
+              textAlign: TextAlign.center,
+              style:
+                  style ??
+                  Styles.textStyle20.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff292B38),
+                  ),
+            ),
           ),
           if (serachIcon)
             IconButton(
@@ -46,8 +51,11 @@ class CustomAppBar extends StatelessWidget {
 
               icon: Icon(Icons.search_rounded, size: 32),
             ),
-           if(serachIcon == false)
-          Icon(Icons.abc, color: const Color(0xffF4F4F4)),
+          if (serachIcon == false)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.book),
+            ),
         ],
       ),
     );

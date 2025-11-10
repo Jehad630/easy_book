@@ -1,6 +1,7 @@
 import 'package:easy_book/core/repo/homeRepoImp.dart';
 import 'package:easy_book/core/utilts/ServiceLocater.dart';
 import 'package:easy_book/core/utilts/app_routes.dart';
+import 'package:easy_book/features/home/presenation/views/view_model/Newset_Book_Cubit/newset_book_cubit.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/PopularBooksCubit/popular_books_cubit.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/RecomandedBooksCubit/recomanded_books_cubit.dart';
 import 'package:easy_book/features/serach/presenation/views/view_model/cubit/serach_cubit.dart';
@@ -30,6 +31,10 @@ class EasyBook extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SerachCubit(getIt.get<HomeRepoImp>()),
+          
+        ),
+        BlocProvider(
+          create: (context) =>  NewsetBookCubit(getIt.get<HomeRepoImp>())..getNewstBooks(),
           
         )
       ],
