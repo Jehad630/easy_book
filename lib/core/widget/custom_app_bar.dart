@@ -9,10 +9,12 @@ class CustomAppBar extends StatelessWidget {
     required this.title,
     required this.backgroundColor,
     this.style,
+    this.serachIcon = true,
   });
   final String title;
   final Color backgroundColor;
   final TextStyle? style;
+  final bool serachIcon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,12 +38,16 @@ class CustomAppBar extends StatelessWidget {
                   color: Color(0xff292B38),
                 ),
           ),
-          IconButton(
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.kSerachView);
-            },
-            icon: Icon(Icons.search_rounded, size: 32),
-          ),
+          if (serachIcon)
+            IconButton(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kSerachView);
+              },
+
+              icon: Icon(Icons.search_rounded, size: 32),
+            ),
+           if(serachIcon == false)
+          Icon(Icons.abc, color: const Color(0xffF4F4F4)),
         ],
       ),
     );

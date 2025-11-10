@@ -1,7 +1,8 @@
 import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/core/utilts/styles.dart';
+import 'package:easy_book/core/widget/Custom_Button.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/about_the_book_section.dart';
-import 'package:easy_book/features/home/presenation/views/widgets/author_card.dart';
+import 'package:easy_book/features/home/presenation/views/widgets/custom_Card.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/book_detalis_blue_widget.dart';
 import 'package:easy_book/core/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,7 @@ class Book_Details_ViewBody extends StatelessWidget {
                   bottom: -50,
                   left: 50,
                   right: 50,
-                  child: author_card(
+                  child: custom_Card(
                     hint: 'Author',
                     title:
                         book.volumeInfo.authors?.join(', ') ?? 'Unknown Author',
@@ -62,45 +63,58 @@ class Book_Details_ViewBody extends StatelessWidget {
                   "No Avalible description",
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              padding: const EdgeInsets.symmetric(
+                vertical: 12.0,
+                horizontal: 16,
+              ),
+              child: GridView.count(
+                physics:
+                    NeverScrollableScrollPhysics(), // so it doesn’t scroll inside Column
+                shrinkWrap: true, // take minimum space
+                crossAxisCount: 2, // 2 cards per row
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio:
+                    150 / 80, // width / height ratio of your cards
                 children: [
-                  author_card(
+                  custom_Card(
                     hint: "Publisher",
-                    title:
-                        book.volumeInfo.publisher?.toString() ??
-                        "Unknown Publisher",
+                    title: book.volumeInfo.publisher ?? "Unknown Publisher",
                     height: 80,
                     width: 150,
                   ),
-                  SizedBox(width: 10),
-                  author_card(
-                    hint: 'Published Date',
-                    title: book.volumeInfo.publishedDate?.toString() ?? "",
+                  custom_Card(
+                    hint: "Published Date",
+                    title: book.volumeInfo.publishedDate ?? "",
+                    height: 80,
+                    width: 150,
+                  ),
+                  custom_Card(
+                    hint: "Page Count",
+                    title: book.volumeInfo.pageCount?.toString() ?? "Unknown",
+                    height: 80,
+                    width: 150,
+                  ),
+                  custom_Card(
+                    hint: "Category",
+                    title: book.volumeInfo.categories?.join(', ') ?? "Unknown",
                     height: 80,
                     width: 150,
                   ),
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                author_card(
-                  hint: "Page  Count",
-                  title: book.volumeInfo.pageCount?.toString() ?? "Unknown",
-                  height: 80,
-                  width: 150,
-                ),
-                SizedBox(width: 10),
-                author_card(
-                  hint: "CateGory",
-                  title: book.volumeInfo.categories?.join(', ') ?? "Unknown" ,
-                  height: 80,
-                  width: 150,
-                ),
-              ],
+            CustomButton(
+              title: "Click To Read",
+              textcolor: Colors.white,
+              borderRadius: 12,
+              backgroundColor:Color(0xff171B36) ,
+              height: 80,
+              width: 300,
+              style: TextStyle(color:Colors.white,fontSize: 26 ),
+              onPressed: ()async {
+                
+              },
             ),
           ],
         ),

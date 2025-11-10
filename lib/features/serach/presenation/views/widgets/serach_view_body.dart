@@ -18,7 +18,7 @@ class SerachViewBody extends StatelessWidget {
 
       body: Column(
         children: [
-          CustomAppBar(title: "Serach", backgroundColor: Color(0xffF4F4F4)),
+          CustomAppBar(title: "Serach", backgroundColor: Color(0xffF4F4F4),serachIcon: false,),
           Padding(
             padding: const EdgeInsets.only(left: 12.0, right: 12, bottom: 12),
             child: CustomSerachTextfiled(),

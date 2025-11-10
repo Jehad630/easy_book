@@ -1,8 +1,8 @@
 import 'package:easy_book/core/utilts/styles.dart';
 import 'package:flutter/material.dart';
 
-class author_card extends StatelessWidget {
-  const author_card({
+class custom_Card extends StatelessWidget {
+  const custom_Card({
     super.key,
     required this.hint,
     required this.title,
