@@ -11,7 +11,7 @@ class OnboradLastView extends StatelessWidget {
   final String title, subtitle, image;
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return  Stack(
       children: [
         Positioned.fill(child: Image.asset(image)),
         Positioned(
@@ -25,7 +25,7 @@ class OnboradLastView extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 15),
+      const  SizedBox(height: 15),
         Positioned(
           top: 730,
           left: 50,

@@ -7,16 +7,16 @@ class CustomBookWidget extends StatelessWidget {
   final String? ImageLink;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
+    return  AspectRatio(
       aspectRatio: 2 / 3.3,
       child: CachedNetworkImage(
         imageUrl:
             ImageLink ??
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0wUdZyXhG2dwDhA2pPng6QSs5jpXVV8jHIz8Z64ZQ2zLqDrgMXSUFvwZ3aOZ9KQW0_mA&usqp=CAU",
         fit: BoxFit.fill,
-        placeholder: (context, url) => CustomLoading(),
+        placeholder: (context, url) => const CustomLoading(),
         errorWidget: (context, url, error) =>
-            Icon(Icons.error, color: Colors.red, size: 64),
+          const  Icon(Icons.error, color: Colors.red, size: 64),
       ),
     );
   }

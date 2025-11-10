@@ -57,7 +57,7 @@ class Book_Details_ViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             // 🔹 About the book section
             about_the_book_section(
               description:
@@ -106,20 +106,19 @@ class Book_Details_ViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            if(book.accessInfo?.pdf?.acsTokenLink != null)
-            CustomButton(
-              title: "Preview",
-              textcolor: Colors.white,
-              borderRadius: 12,
-              backgroundColor:Color(0xff171B36) ,
-              height: 80,
-              width: 300,
-              style: TextStyle(color:Colors.white,fontSize: 26 ),
-              onPressed: ()async {
-                launchCustomUrl(context, book.volumeInfo.previewLink!);
-              },
-            ),
-            
+            if (book.accessInfo?.pdf?.acsTokenLink != null)
+              CustomButton(
+                title: "Preview",
+                textcolor: Colors.white,
+                borderRadius: 12,
+                backgroundColor: Color(0xff171B36),
+                height: 80,
+                width: 300,
+                style: TextStyle(color: Colors.white, fontSize: 26),
+                onPressed: () async {
+                  launchCustomUrl(context, book.volumeInfo.previewLink!);
+                },
+              ),
           ],
         ),
       ),

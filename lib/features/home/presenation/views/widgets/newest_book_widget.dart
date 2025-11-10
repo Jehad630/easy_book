@@ -17,13 +17,13 @@ class newest_book_widget extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(right: 16, left: 16),
             // the conatiner for the wiget
-            child: Container(
+            child:  Container(
               height: 205,
               decoration: BoxDecoration(
                 color: const Color(0xffFFFFFF),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: newest_book_detalis_widget(
+              child:  newest_book_detalis_widget(
                 book: state.books[0],
                
               ),

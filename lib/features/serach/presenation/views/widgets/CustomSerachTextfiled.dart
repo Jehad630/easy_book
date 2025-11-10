@@ -1,4 +1,4 @@
-import 'package:easy_book/features/serach/presenation/views/view_model/cubit/serach_cubit.dart';
+import 'package:easy_book/features/serach/presenation/views/view_model/serach_cubit/serach_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,9 +16,9 @@ class _CustomSerachTextfiledState extends State<CustomSerachTextfiled> {
   Widget build(BuildContext context) {
     return TextField(
       controller: _controller,
-      decoration: InputDecoration(
+      decoration:  InputDecoration(
         hintText: "Search category (e.g. programming, history...)",
-        suffixIcon: IconButton(
+        suffixIcon:  IconButton(
           icon: const Icon(Icons.search_rounded, size: 20),
           onPressed: () {
             final query = _controller.text.trim();
@@ -40,8 +40,8 @@ class _CustomSerachTextfiledState extends State<CustomSerachTextfiled> {
   }
 
   OutlineInputBorder buildBorder(Color color) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: color, width: 2),
+    borderRadius:  BorderRadius.circular(12),
+    borderSide:  BorderSide(color: color, width: 2),
   );
 
   @override

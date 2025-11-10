@@ -18,14 +18,14 @@ class newest_book_detalis_widget extends StatelessWidget {
         //   book image
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: AspectRatio(
+          child:  AspectRatio(
             aspectRatio: 2 / 3.3,
             child: CachedNetworkImage(
               imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? "",
               fit: BoxFit.fill,
-              placeholder: (context, url) => CustomLoading(),
+              placeholder: (context, url) => const CustomLoading(),
               errorWidget: (context, url, error) =>
-                  Icon(Icons.error, color: Colors.red, size: 64),
+               const   Icon(Icons.error, color: Colors.red, size: 64),
             ),
           ),
         ),
@@ -66,7 +66,7 @@ class newest_book_detalis_widget extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
                 ),
-                SizedBox(height: 8),
+            const    SizedBox(height: 8),
 
                 // buttons
                 BookButtons(

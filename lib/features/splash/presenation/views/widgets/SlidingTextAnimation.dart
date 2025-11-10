@@ -7,12 +7,12 @@ class SlidingTextAnimation extends StatelessWidget {
   final Animation<Offset> sildingAnimtion;
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
+    return  AnimatedBuilder(
       animation: sildingAnimtion,
       builder: (context, _) {
-        return SlideTransition(
+        return  SlideTransition(
           position: sildingAnimtion,
-          child: Text("EASY BOOK", style: Styles.SplashViewText),
+          child:const Text("EASY BOOK", style: Styles.SplashViewText),
         );
       },
     );

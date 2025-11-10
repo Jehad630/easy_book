@@ -60,7 +60,6 @@ class custom_Card extends StatelessWidget {
                 ],
               ),
             ),
-            //const Icon(Icons.star, color: Colors.grey, size: 22),
           ],
         ),
       ),

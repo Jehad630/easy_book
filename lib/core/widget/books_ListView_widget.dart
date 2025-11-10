@@ -16,7 +16,7 @@ class books_ListView_widget extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Color(0xffFFFFFF),
+          color:const Color(0xffFFFFFF),
         ),
         child: SizedBox(
           height: 120,
@@ -47,7 +47,7 @@ class books_ListView_widget extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 4),
+                   const   SizedBox(height: 4),
                       // book author
                       Text(
                         book.volumeInfo.authors
@@ -62,11 +62,11 @@ class books_ListView_widget extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       //rating
-                      Text(
+                   const   Text(
                         "5.0 | Based on 23k Reviews",
                         style: Styles.BookSubTitle,
                       ),
-                      SizedBox(height: 8),
+                   const   SizedBox(height: 8),
                       //price
                       PriceWidget(
                         currencyCode:
@@ -98,7 +98,7 @@ class books_ListView_widget extends StatelessWidget {
                       borderRadius: 8,
                       backgroundColor: const Color(0xffDE7773),
                     ),
-                    SizedBox(height: 8),
+              const      SizedBox(height: 8),
                     CustomButton(
                       onPressed: () {
                         GoRouter.of(

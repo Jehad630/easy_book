@@ -18,7 +18,7 @@ class about_the_book_section extends StatelessWidget {
           Center(
             child: Text(
               description,
-              style: TextStyle(color: Colors.black87, height: 1.5),
+              style:const TextStyle(color: Colors.black87, height: 1.5),
             ),
           ),
         ],

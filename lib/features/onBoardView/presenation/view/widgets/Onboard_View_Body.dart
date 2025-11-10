@@ -23,7 +23,7 @@ class _OnboardViewBodyState extends State<OnboardViewBody> {
         onPageChanged: (index) {
           setState(() => isLastPage = index == 2);
         },
-        children: [
+        children:const [
           BuildPage(
             title: 'Only Books Can Help You',
             subtitle:
@@ -44,7 +44,7 @@ class _OnboardViewBodyState extends State<OnboardViewBody> {
           ),
         ],
       ),
-      bottomSheet: bottomsheet_onboard(),
+      bottomSheet:const bottomsheet_onboard(),
     );
   }
 }

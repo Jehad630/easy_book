@@ -6,6 +6,6 @@ class SerachView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: const SerachViewBody());
+    return const SafeArea(child: SerachViewBody());
   }
 }

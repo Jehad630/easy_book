@@ -45,7 +45,7 @@ class _Splas_view_bodyState extends State<Splas_view_body>
 
               children: [
                 Image.asset("assets/images/Group (1).png", height: 80),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 SlidingTextAnimation(sildingAnimtion: sildingAnimation),
               ],
             ),

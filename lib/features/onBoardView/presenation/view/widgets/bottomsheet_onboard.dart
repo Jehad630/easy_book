@@ -9,7 +9,7 @@ class bottomsheet_onboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       color: Colors.white,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 80,

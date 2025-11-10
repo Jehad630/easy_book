@@ -49,11 +49,11 @@ class CustomAppBar extends StatelessWidget {
                 GoRouter.of(context).push(AppRouter.kSerachView);
               },
 
-              icon: Icon(Icons.search_rounded, size: 32),
+              icon: const Icon(Icons.search_rounded, size: 32),
             ),
           if (serachIcon == false)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.book),
             ),
         ],

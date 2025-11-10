@@ -51,19 +51,18 @@ class book_detalis_blue_widget extends StatelessWidget {
                   ),
                   maxLines: 2,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 // book description
                 Text(
                   desc,
                   style: Styles.textStyle14.copyWith(
                     color: Colors.white,
-                    fontSize: 8,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
                   ),
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.start,
-                  maxLines: 2,
+                  maxLines: 3,
                 ),
                 Row(
                   children: [
@@ -78,25 +77,8 @@ class book_detalis_blue_widget extends StatelessWidget {
                     Text(
                       currencyCode,
                       style: Styles.textStyle14.copyWith(
-                        color: Colors.white,                      
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-
-                Row(
-                  children: [
-                    Icon(Icons.star, color: Colors.amber, size: 22),
-                    Icon(Icons.star, color: Colors.amber, size: 22),
-                    Icon(Icons.star, color: Colors.amber, size: 22),
-                    Icon(Icons.star, color: Colors.amber, size: 22),
-                    Icon(Icons.star, color: Colors.amber, size: 22),
-                    Text(
-                      "  (5.0)",
-                      style: Styles.textStyle14.copyWith(
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

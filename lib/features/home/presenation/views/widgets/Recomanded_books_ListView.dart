@@ -20,22 +20,22 @@ class Recomanded_books_ListView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .2,
-                  child: ListView.builder(
-                    physics: BouncingScrollPhysics(),
+                  height:  MediaQuery.of(context).size.height * .2,
+                  child:  ListView.builder(
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemCount: state.books.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
+                        child:  GestureDetector(
                           onTap: () {
                             GoRouter.of(context).push(
                               AppRouter.kbookdetalisView,
                               extra: state.books[index],
                             );
                           },
-                          child: CustomBookWidget(
+                          child:  CustomBookWidget(
                             ImageLink:
                                 state
                                     .books[index]
@@ -53,7 +53,7 @@ class Recomanded_books_ListView extends StatelessWidget {
             ),
           );
         } else if (state is RecomandedBooksFaliure) {
-          return CustomErrorWidget(errmesg: state.errmesg);
+          return  CustomErrorWidget(errmesg: state.errmesg);
         } else {
           return const CustomLoading();
         }

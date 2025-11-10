@@ -13,7 +13,7 @@ class Popular_books_ListView extends StatelessWidget {
     return BlocBuilder<PopularBooksCubit, PopularBooksState>(
       builder: (context, state) {
         if (state is PopularBooksSuccess) {
-          return Expanded(
+          return  Expanded(
             // height: MediaQuery.of(context).size.height * .325,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
@@ -33,7 +33,7 @@ class Popular_books_ListView extends StatelessWidget {
         } else if (state is PopularBooksFaliure) {
           return CustomErrorWidget(errmesg: state.errmesg);
         } else {
-          return CustomLoading();
+          return const CustomLoading();
         }
       },
     );

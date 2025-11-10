@@ -18,13 +18,13 @@ class BuildPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 50),
           child: Image.asset(image),
         ),
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         Text(
           title,
           style: Styles.OnBoardTitle.copyWith(),
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
