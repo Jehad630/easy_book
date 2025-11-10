@@ -7,6 +7,8 @@ import 'package:easy_book/features/home/presenation/views/widgets/book_detalis_b
 import 'package:easy_book/core/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utilts/Funcetions.dart';
+
 class Book_Details_ViewBody extends StatelessWidget {
   const Book_Details_ViewBody({super.key, required this.book});
   final BookModel book;
@@ -104,8 +106,9 @@ class Book_Details_ViewBody extends StatelessWidget {
                 ],
               ),
             ),
+            if(book.accessInfo?.pdf?.acsTokenLink != null)
             CustomButton(
-              title: "Click To Read",
+              title: "Preview",
               textcolor: Colors.white,
               borderRadius: 12,
               backgroundColor:Color(0xff171B36) ,
@@ -113,9 +116,10 @@ class Book_Details_ViewBody extends StatelessWidget {
               width: 300,
               style: TextStyle(color:Colors.white,fontSize: 26 ),
               onPressed: ()async {
-                
+                launchCustomUrl(context, book.volumeInfo.previewLink!);
               },
             ),
+            
           ],
         ),
       ),
