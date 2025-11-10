@@ -1,4 +1,6 @@
+import 'package:easy_book/features/serach/presenation/views/view_model/cubit/serach_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomSerachTextfiled extends StatefulWidget {
   const CustomSerachTextfiled({super.key});
@@ -18,12 +20,22 @@ class _CustomSerachTextfiledState extends State<CustomSerachTextfiled> {
         hintText: "Search category (e.g. programming, history...)",
         suffixIcon: IconButton(
           icon: const Icon(Icons.search_rounded, size: 20),
-          onPressed: () {},
+          onPressed: () {
+            final query = _controller.text.trim();
+            if (query.isNotEmpty) {
+              context.read<SerachCubit>().fetchSerachBooks(query);
+            }
+          },
         ),
         enabledBorder: buildBorder(Colors.grey),
         focusedBorder: buildBorder(Colors.black),
       ),
-      onSubmitted: (value) {},
+      onSubmitted: (value) {
+        final query = value.trim();
+        if (query.isNotEmpty) {
+          context.read<SerachCubit>().fetchSerachBooks(query);
+        }
+      },
     );
   }
 

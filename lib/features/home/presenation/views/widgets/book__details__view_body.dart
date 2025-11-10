@@ -1,10 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_book/core/model/book_model/book_model.dart';
 import 'package:easy_book/core/utilts/styles.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/about_the_book_section.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/author_card.dart';
 import 'package:easy_book/features/home/presenation/views/widgets/book_detalis_blue_widget.dart';
-import 'package:easy_book/features/home/presenation/views/widgets/custom_app_bar.dart';
+import 'package:easy_book/core/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class Book_Details_ViewBody extends StatelessWidget {
@@ -53,6 +52,7 @@ class Book_Details_ViewBody extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 100,),
             // 🔹 About the book section
             about_the_book_section(
               description:

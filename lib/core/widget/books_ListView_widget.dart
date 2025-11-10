@@ -6,13 +6,13 @@ import 'package:easy_book/core/widget/Custom_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class Popular_books_ListView_widget extends StatelessWidget {
-  const Popular_books_ListView_widget({super.key, required this.book});
+class books_ListView_widget extends StatelessWidget {
+  const books_ListView_widget({super.key, required this.book});
   final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 12.0, top: 8),
+      padding: const EdgeInsets.only(right: 12.0, top: 8,left: 12),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),

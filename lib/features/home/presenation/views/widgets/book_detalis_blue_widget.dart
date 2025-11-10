@@ -29,11 +29,12 @@ class book_detalis_blue_widget extends StatelessWidget {
       // book deatlis section in Blue section
       child: Row(
         children: [
-          SizedBox(
-            height: 150,
-            width: 120,
-            child: CachedNetworkImage(
-              imageUrl: imageUrl,
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: SizedBox(
+              height: 150,
+              width: 120,
+              child: CachedNetworkImage(imageUrl: imageUrl),
             ),
           ),
           Expanded(
@@ -53,7 +54,7 @@ class book_detalis_blue_widget extends StatelessWidget {
                 SizedBox(height: 10),
                 // book description
                 Text(
-                  desc ,
+                  desc,
                   style: Styles.textStyle14.copyWith(
                     color: Colors.white,
                     fontSize: 8,
@@ -64,22 +65,26 @@ class book_detalis_blue_widget extends StatelessWidget {
                   textAlign: TextAlign.start,
                   maxLines: 2,
                 ),
-                Text(
-                  price,
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.white,
-                    fontSize: 8,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      price,
+                      style: Styles.textStyle14.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      currencyCode,
+                      style: Styles.textStyle14.copyWith(
+                        color: Colors.white,                      
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  currencyCode,
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.white,
-                    fontSize: 8,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+
                 Row(
                   children: [
                     Icon(Icons.star, color: Colors.amber, size: 22),

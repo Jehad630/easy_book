@@ -3,6 +3,7 @@ import 'package:easy_book/core/utilts/ServiceLocater.dart';
 import 'package:easy_book/core/utilts/app_routes.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/PopularBooksCubit/popular_books_cubit.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/RecomandedBooksCubit/recomanded_books_cubit.dart';
+import 'package:easy_book/features/serach/presenation/views/view_model/cubit/serach_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,6 +28,10 @@ class EasyBook extends StatelessWidget {
               RecomandedBooksCubit(getIt.get<HomeRepoImp>())
                 ..fetchRecomandedBooks(),
         ),
+        BlocProvider(
+          create: (context) => SerachCubit(getIt.get<HomeRepoImp>()),
+          
+        )
       ],
 
       child: MaterialApp.router(

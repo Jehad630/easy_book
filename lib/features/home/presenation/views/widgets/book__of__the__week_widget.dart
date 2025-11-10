@@ -7,7 +7,7 @@ class Book_Of_The_Week_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16),
+      padding: const EdgeInsets.only(right: 16, left: 16),
       // the conatiner for the wiget
       child: Container(
         height: 205,

@@ -64,7 +64,9 @@ class book_of_the_week_detalis_widget extends StatelessWidget {
                   height: 35,
                   width: 100,
                   LearnButton: () {
-                    GoRouter.of(context).push(AppRouter.kbookdetalisView);
+                    GoRouter.of(
+                      context,
+                    ).push(AppRouter.kbookdetalisView, extra: ImageLink);
                   },
                   grabButton: () {
                     GoRouter.of(context).push(AppRouter.kbookdetalisView);

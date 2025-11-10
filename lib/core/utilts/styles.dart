@@ -1,6 +1,5 @@
 import 'package:easy_book/core/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 abstract class Styles {
   static const textStyle30 = TextStyle(

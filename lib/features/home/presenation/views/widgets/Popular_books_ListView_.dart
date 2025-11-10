@@ -1,7 +1,7 @@
 import 'package:easy_book/core/widget/Custom_Loading.dart';
 import 'package:easy_book/core/widget/Custom_error_widget.dart';
 import 'package:easy_book/features/home/presenation/views/view_model/PopularBooksCubit/popular_books_cubit.dart';
-import 'package:easy_book/features/home/presenation/views/widgets/popular_books__list_view_widget.dart';
+import 'package:easy_book/core/widget/books_ListView_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,9 +21,9 @@ class Popular_books_ListView extends StatelessWidget {
               itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 0.0),
 
-                  child: Popular_books_ListView_widget(
+                  child: books_ListView_widget(
                     book: state.books[index],
                   ),
                 );
